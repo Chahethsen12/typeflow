@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# Typeflow 👻
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **AI-powered typing improvement.** Train smarter, not just faster.
 
-Currently, two official plugins are available:
+Typeflow is a premium, distraction-free web application built to help developers and students seamlessly improve their typing speed, accuracy, and muscle memory. Instead of feeding you static text or random word lists, Typeflow actively learns your typing habits and **generates adaptive drills specifically targeting your weakest keys.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **🧠 AI Adaptive Drill Generation:** The core engine monitors every keystroke. It calculates your absolute worst-performing keys across your entire history and dynamically synthesizes practice text heavily weighted toward those specific letters to force improvement.
+- **📊 Global Analytics Dashboard:** A comprehensive, persistent profile that calculates your All-Time Best WPM, Average Accuracy, and tracks your specific "Global Weak Keys".
+- **📱 Fully Responsive & Fluid:** The entire application uses native mathematical Flexbox ratios to intelligently squeeze and wrap on any device, from ultrawide 4K monitors to the narrowest mobile screens, without relying on brittle breakpoints.
+- **✨ Premium Glassmorphism UI:** A sleek, distraction-free, dark-mode aesthetic featuring fluid hover interactions, subtle glows, and a beautifully minimalist layout.
+- **🎬 Cinematic Animations:** Powered by Framer Motion, experience butter-smooth 60fps page transitions, magnetic interactive components, and spring-loaded modal popups.
+- **⌨️ Interactive Virtual Keyboard:** A responsive visual keyboard overlay that provides real-time correct/error key tap visualization.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Framework:** [React 18](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Styling:** Custom native CSS variables and Flexbox architecture
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Getting Started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Prerequisites
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Ensure you have Node.js installed on your machine.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Chahethsen12/typeflow.git
+   cd typeflow
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:** Navigate to `http://localhost:5173` to see the app running.
+
+---
+
+## 🧬 Under the Hood: Adaptive Generation Algorithm
+
+Unlike standard typing applications, Typeflow's drill generator does not rely on static sentences. 
+
+1. **Continuous Telemetry:** The app maintains a `TestResult` interface in persistent `localStorage`. Every session logs your WPM, Accuracy, and a detailed map of exactly which target characters you missed.
+2. **Aggregated Weakness Mapping:** Before a test begins, the app scans your entire history to establish an ordered hierarchy of your "Global Weak Keys".
+3. **Probability-Weighted Synthesis:** Using a tailored internal word bank, the generator applies a 60/40 probability matrix. It intentionally forces words containing your worst performing letters ~60% of the time, interspersed with safe pacing words to maintain a natural typing rhythm.
+
+---
+
+## 🗺️ Roadmap (Upcoming Features)
+
+- [ ] **Custom Practice Text Library** (Import your own code snippets or book chapters)
+- [ ] **Multi-Theme Support** (Light mode and color variable injection)
+- [ ] **Cloud Sync** (Optional cross-device metric synchronization via backend database)
+- [ ] **Typing Heatmap** (Visual calendar representation of daily practice frequency)
+- [ ] **Granular Settings** (Adjustable test durations, strict punctuation toggles, key-press sounds)
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Chahethsen12/typeflow/issues).
+
+---
+
+*Designed and engineered for people who treat typing as a craft.*
